@@ -1,0 +1,86 @@
+.accordion {
+    padding-bottom: 4rem;
+}
+.accordion__item {
+    margin-bottom: 4rem;
+    color: $color-light;
+    list-style: none;
+    padding: 1.5rem;
+    box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgba(120, 120, 120, 0.4);
+    @extend %transition;
+
+    &:hover {
+        box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgba(238, 117, 117, 0.5);
+        @extend %transition;
+    }
+}
+.accordion__btn {
+    color: $color-light;
+    background-color: transparent;
+    border: none;
+    width: 100%; 
+    background-image: url(assets/icons/arrowup.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    outline: none;
+    background-size: 3rem;
+
+    &-active {
+        margin-bottom: 1.5rem;
+        background-image: url(assets/icons/arrowdown.svg);
+    }
+
+    @include media-tablet {
+        background-size: 2.5rem;
+    }
+    @include media-mobile {
+        background-size: 2rem;
+    }
+}
+
+.accordion-item__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-item__title {
+    @include font ($size: 2.5rem, $height: 3rem);
+    max-width: 120rem;
+    max-width: calc(100% - 6rem);
+    text-align: start;
+
+    @include media-tablet {
+        @include font ($size: 2.2rem, $height: 2.5rem);
+        max-width: calc(100% - 5.5rem);
+    }
+    @include media-mobile {
+        @include font ($size: 2rem, $height: 2.2rem);
+        max-width: calc(100% - 5rem);
+    }
+}
+
+.accordion__content {
+    list-style: none;
+    margin-bottom: 2rem;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+.accordion-content__item {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.5;
+    @include font ($size: 1.6rem, $height: 2.6rem);
+    margin-bottom: 1rem;
+
+    @include media-tablet {
+        @include font ($size: 1.5rem, $height: 2.2rem);
+    }
+    @include media-mobile {
+        @include font ($size: 1.4rem, $height: 2rem);
+    }
+}

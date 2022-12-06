@@ -1,0 +1,28 @@
+%link-color {
+    color: $color-light; 
+    text-decoration: none; 
+}  
+
+%link-color-active {
+    border-bottom: 3px solid #F1CDB3; 
+}
+
+%transition {
+    transition: all .3s ease-out;
+}
+
+%table-border {
+    border: 0.15rem solid #363636;
+    border: 0.15rem solid #100202;
+    border: 0.15rem solid grey;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+%section-shadow {
+    max-width: 120rem;
+    margin: auto;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+

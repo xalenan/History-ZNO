@@ -1,0 +1,39 @@
+.preview {
+    background-image: $color-header-bg, url(assets/img/preview-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgb(0 0 0 / 90%);
+}
+
+.preview__wrapper {
+    @include flex();
+    flex-direction: column;
+    padding-top: 13rem;
+}
+
+.preview__title {
+    margin-bottom: 8rem;
+}
+
+.preview__subtitle {
+    font-weight: 400;
+    margin-bottom: 11rem;
+}
+
+.programm__text {
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+
+    @include media-tablet {
+        @include font ($size: 1.4rem, $height: 2.2rem);
+    }
+
+    @include media-mobile {
+        @include font ($size: 1.2rem, $height: 2rem);
+    }
+}

@@ -1,0 +1,117 @@
+.chapters {
+    @include flex();
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 3rem;
+    row-gap: 5rem;
+}
+
+.chapter {
+    @include font ($size: 2rem, $height: 2.5rem, $weight: 500);
+    @include flex();
+    max-width: 32rem;
+    padding: 2rem;
+    background: $color-body;
+    color: $color-text;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgba(120, 120, 120, 0.7);
+    @extend %transition;
+
+    &:hover {
+        background: #0b0b18;
+        color: $color-text;
+        box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgba(238, 117, 117, 0.5);
+        @extend %transition;
+    }
+
+    &.active {
+        background: $color-cards-hover;
+        color: $color-section-title;
+    }
+
+    @include media-mobile {
+        @include font ($size: 1.8rem, $height: 2.2rem, $weight: 500);
+    }
+}
+
+// ==========================================
+
+.tabs-block-wrapper {
+    color: #fff;
+}
+
+.tabs-block-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 3rem;
+    column-gap: 2rem;
+}
+
+.contents {
+    width: 100%;
+    font-size: 20px;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+.content__title {
+    letter-spacing: 0.05rem;
+}
+
+// ==========================================
+
+.monuments-item {
+    @include flex();
+    flex-direction: column;
+    margin-bottom: 8rem;
+}
+
+.monuments-item__title-link {
+    display: block;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.building-item__title {
+    color: $color-add;
+    @extend %transition;
+
+    &:hover {
+        color: $color-add-hover;
+        @extend %transition;
+    }
+}
+
+.building-item__subtitle {
+    @include font ($size: 1.6rem, $height: 2rem);
+    color: $color-text;
+    margin-bottom: 0.5rem;
+
+    @include media-tablet {
+        @include font ($size: 1.5rem, $height: 2rem);
+    }
+}
+
+.building-item__picture {
+    margin-bottom: 2rem;
+}
+
+.building-item__img {
+    max-width: 100%;
+}

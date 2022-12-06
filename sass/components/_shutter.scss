@@ -1,0 +1,165 @@
+.shutter {
+    height: 19rem;
+    position: relative;
+    margin-top: 5rem;
+}
+
+.c-shutter {
+    font-size: 3rem;
+    color: $color-shutter;
+    line-height: 1.5;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 100%;
+    list-style: none;
+    user-select: none;
+
+    &__slat {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        flex-grow: 1;
+        background-color: $color-shutter;
+        animation-name: var(--animation);
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+
+        @for $i from 1 through 4 {
+
+            // 4 - делим на 4 ступеньки
+            &:nth-child(#{$i}) {
+                animation-delay: calc(#{$i} / 4 * 1s); // 4 - делим на 4 ступеньки
+
+                &:before {
+                    margin-left: calc(#{$i - 1} * -10vw);
+                }
+            }
+        }
+
+        &:before {
+            content: '';
+            color: $color-shutter;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+
+    &-opened:not(&-closing) {
+        display: none;
+    }
+
+    &-opened &__slat {
+        height: 0%;
+    }
+
+    &-closed {
+        display: flex;
+    }
+
+
+    &-opening {
+        --animation: shutterOpening;
+    }
+
+    &-closing {
+        --animation: shutterClosing;
+    }
+}
+
+.item-persons__btn {
+    width: 25rem;
+    text-align: center;
+    @include font ($size: 1.6rem, $height: 2.2rem);
+    padding: 1.5rem 0.5rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 90%);
+
+    @include media-tablet {
+        height: 8.4rem;
+    }
+    @include media-tablet-small {
+        height: 11.5rem;
+    }
+
+    @include media-mobile {
+        @include font ($size: 1.2rem, $height: 2rem);
+        padding: 1rem 0.5rem;
+        height: 10rem;
+    }
+}
+
+@keyframes shutterOpening {
+    0% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
+@keyframes shutterClosing {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+
+// Button
+
+.shutter__btn {
+    position: absolute;
+    cursor: pointer;
+    bottom: 1rem;
+    left: 50%;
+    transform: translatex(-50%);
+    padding: 1rem 2rem;
+    border: none;
+    transition: opacity .5s ease-in-out, outline .5s ease-in-out;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 90%);
+
+    &:before {
+        content: "Закрити";
+    }
+
+    @include media-mobile {
+        @include font ($size: 1.6rem, $height: 2rem);
+    }
+}
+
+.c-shutter-opened~.shutter__btn {
+    background-color: $color-shutter;
+    color: $color-text;
+    letter-spacing: 0.1rem;
+
+    &:before {
+        content: "Бажаеш перевірити себе та пройти тест? Натискай!";
+    }
+}
+
+.c-shutter-opening~.shutter__btn,
+.c-shutter-closing~.shutter__btn,
+.c-demo:disabled {
+    pointer-events: none;
+    opacity: 0;
+
+    &:before {
+        content: "";
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

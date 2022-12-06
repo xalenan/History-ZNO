@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import 'sass/base/normalize';
+
+//Abstract
+@import 'sass/abstract/constants';
+@import 'sass/abstract/mixins';
+@import 'sass/abstract/placeholders';
+
+//Base
+@import 'sass/base/base';
+@import 'sass/base/to-top';
+@import 'sass/base/swiper-bundle.min';
+
+//Layouts
+// @import 'sass/layouts/footer';
+@import 'sass/layouts/header';
+
+//Components
+@import 'sass/components/preview';
+@import 'sass/components/dates';
+@import 'sass/components/accordion';
+@import 'sass/components/persons';
+@import 'sass/components/slider';
+@import 'sass/components/shutter';
+@import 'sass/components/quiz';
+@import 'sass/components/quiz-persons';
+@import 'sass/components/historical-monuments';
+
+
+

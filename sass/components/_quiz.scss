@@ -1,0 +1,260 @@
+.quiz {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+// ==========================================
+.back-btn__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 2.5rem;
+    text-decoration: none;
+
+    @include media-mobile {
+        gap: 1.5rem;
+    }
+}
+
+.back-btn__array {
+    width: 5rem;
+    height: 5rem;
+    align-self: center;
+    filter: brightness(0) invert(1);    /* Белый цвет иконки*/
+
+    @include media-mobile {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+.back-btn__text {
+    @include font ($size: 1.8rem, $height: 2.5rem);
+
+    @include media-mobile {
+        @include font ($size: 1.4rem, $height: 2rem);
+    }
+}
+
+// ==========================================
+.quiz__title-main {
+    margin-bottom: 7rem;
+}
+
+// ==========================================
+.quiz__question {
+    max-width: 60rem;
+    background-image: url(assets/img/123456730.jpg);
+    margin: auto;
+    border-radius: 1rem;
+    padding: 1.5rem 2.5rem;
+    box-shadow: 6px 6px 20px rgb(255 255 255 / 30%);
+}
+
+.number__title {
+    @include font ($size: 2rem, $height: 3rem, $weight: 700);
+    color: $color-number-title;
+    border-bottom: 0.1rem solid #837575;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+
+    @include media-mobile {
+        @include font ($size: 1.6rem, $height: 2rem, $weight: 700);
+    }
+}
+
+.quiz__title {
+    font-weight: 700;
+    color: $color-dark;
+    margin-bottom: 2rem;
+    min-height: 6.6rem;
+}
+
+// ==========================================
+.quiz__options {
+    margin-bottom: 4rem;
+}
+
+.quiz__option {
+    @include font ($size: 1.8rem, $height: 2.2rem);
+    background-color: $color-primary;
+    color: $color-text;
+    margin-bottom: 2.5rem;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    padding-left: 2.5rem;
+    cursor: pointer;
+    @extend %transition;
+    box-shadow: 0.2rem 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.9);
+
+    &:active {
+        box-shadow: none;
+    }
+
+    &:hover {
+        background-color: rgba(52, 56, 98, 0.8);
+        @extend %transition;
+    }
+
+    @include media-mobile {
+        @include font ($size: 1.6rem, $height: 2rem);
+    }
+}
+
+.quiz__option.correct {
+    background-color: $color-correct;
+}
+
+.quiz__option.wrong {
+    background-color: $color-wrong;
+}
+
+.quiz__option.disabled {
+    pointer-events: none;
+}
+
+// ==========================================
+.quiz__btn {
+    @include font ($size: 1.8rem, $height: 2.2rem);
+    padding: 1.5rem 5rem;
+    background-color: $color-bg-btn;
+    color: $color-text;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    @extend %transition;
+    margin-bottom: 2.5rem;
+    box-shadow: 0.2rem 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.5);
+
+    &:active {
+        box-shadow: none;
+    }
+
+    &:hover {
+        background-color: $color-bg-btn-hover;
+        @extend %transition;
+    }
+
+    @include media-mobile {
+        padding: 1.5rem 4.4rem;
+    }
+}
+
+// ==========================================
+.quiz__tracker {
+    @include flex();
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 0.1rem solid #837575;
+    padding-top: 1.5rem;
+}
+
+.quiz__tracker div {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #535562;
+    display: inline-block;
+    border-radius: 50%;
+
+    @include media-tablet {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+.quiz__tracker div.correct {
+    background-color: $color-correct;
+}
+
+.quiz__tracker div.wrong {
+    background-color: $color-wrong;
+}
+
+// ========================================
+
+.quiz__modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-modal-shadow;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5rem;
+
+    &.active {
+        display: flex;
+    }
+}
+
+.quiz-over-modal .content-quiz {
+    background-color: $color-bg-modal;
+    padding: 3rem;
+    border-radius: 1rem;
+    flex-basis: 70rem;
+    max-width: 70rem;
+    color: $color-text;
+    text-align: center;
+
+    @include media-mobile {
+        padding: 2rem;
+    }
+}
+
+.content__title {
+    font-weight: 700;
+    margin: 0 0 6rem;
+
+    @include media-mobile {
+        @include font ($size: 2.3rem, $height: 3rem);
+    }
+}
+
+.content__text {
+    color: $color-text;
+    margin-bottom: 4rem;
+}
+
+// ==========================================
+.content__btn {
+    @include font ($size: 1.8rem, $height: 2.2rem);
+    padding: 1.5rem 9.21rem;
+    border: none;
+    background-color: $color-bg-modal-btn;
+    color: $color-text;
+    @extend %transition;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    box-shadow: 0.2rem 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.5);
+
+    &:active {
+        box-shadow: none;
+    }
+
+    &:hover {
+        background-color: $color-bg-modal-btn-hover;
+        @extend %transition;
+    }
+
+    @include media-mobile {
+        padding: 1.5rem 3.9rem;
+    }
+}
+
+.content__back-btn {
+    @include font ($size: 1.8rem, $height: 2.2rem);
+    display: block;
+    max-width: 35.6rem;
+    margin: auto;
+    padding: 1.5rem 3rem;
+
+    @include media-mobile {
+        max-width: 24.9rem;
+    }
+
+}

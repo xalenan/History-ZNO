@@ -1,0 +1,81 @@
+html {
+    scroll-behavior: smooth; 
+    font-size: 10px;
+    line-height: 10px;
+}
+
+body {  
+    font-family: 'Inter', sans-serif;
+    font-style: normal;  
+    font-weight: 400;
+    overflow-x: hidden;       
+    @extend %transition;
+    background-color: $color-body;
+    &.hidden {
+        overflow: hidden;
+    }
+}
+
+.container {
+    max-width: $content-width;
+    width: 100%;
+    padding: 0 4rem;
+    margin: 0 auto;
+    @include media-tablet {
+        padding: 0 3rem;
+    }
+    @include media-tablet-small {
+        padding: 0 2rem;
+    }
+    @include media-mobile {
+        padding: 0 1rem;
+    }
+}
+
+.section {
+    @include section();
+}
+
+.title-main {
+    @include title-main();
+}
+
+.title {
+    @include title();
+}
+
+.title-add {
+    @include title-add();
+}
+
+.title-other {
+    @include title-other();
+}
+
+.title-bg {
+    max-width: 55rem;
+    width: 100%;
+    margin: 0 auto 5rem;
+    position: relative;
+}
+
+.title-bg__img {
+    max-width: 100%;
+}
+
+.title-bg__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-section-title;
+}
+
+.btn {
+    @include btn();
+}
+
+.btn__link {
+    @include btn-link();
+}
+

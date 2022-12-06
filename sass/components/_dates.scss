@@ -1,0 +1,51 @@
+.dates__title-items {
+    margin-bottom: 7rem;
+
+    @include media-tablet {
+        margin-bottom: 5rem;
+    }   
+}
+
+.dates__items {
+    @include flex();
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 3rem;
+    row-gap: 5rem;
+}
+
+.dates__item {
+    @include flex();
+    flex-direction: column;
+    width: 40rem;
+    padding: 2rem;
+    background: $color-cards;
+    border-radius: 0.5rem;
+    @extend %transition;
+
+    &:hover {
+        background: $color-cards-hover;
+        @extend %transition;
+    }
+}
+
+.item-dates__title {
+    margin-bottom: 3rem;
+    color: $color-dark;
+    height: 24rem;
+    
+
+    @include media-laptop-change {
+        height: 12.2rem;
+    }
+}
+
+.item-dates__btn {
+    padding: 1.5rem 3rem;
+    height: 25rem;
+
+    @include media-tablet-small {
+        height: auto;
+    }
+}
+
