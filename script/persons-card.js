@@ -1,6 +1,6 @@
 let persons = [];
 
-fetch("/db/persons.json")
+fetch("db/persons.json")
     .then((res) => res.json())
     .then((list) => {
         persons = list;
