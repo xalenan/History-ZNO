@@ -151,7 +151,7 @@ const renderDates = (dates) => {
 }
 
 const getData = (value) => {
-    fetch('/db/dates.json')
+    fetch('db/dates.json')
         .then((res) => res.json())
         .then((data) => {
             const array = data.filter((item) => item.period === value)
