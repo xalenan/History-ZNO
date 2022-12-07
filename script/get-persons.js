@@ -169,7 +169,6 @@ links.forEach((link) => {
         event.preventDefault();
 
         const linkValue = link.textContent;
-
         getData(linkValue)
     })
 })
