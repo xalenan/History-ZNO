@@ -561,8 +561,8 @@ body.hidden {
   position: fixed;
   right: 1rem;
   bottom: 0;
-  width: 9.5rem;
-  height: 9.5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   background-color: #db4545;
   display: flex;
@@ -582,35 +582,14 @@ body.hidden {
 }
 @media (max-width: 768px) {
   .to-top {
-    width: 8rem;
-    height: 8rem;
+    width: 4rem;
+    height: 4rem;
   }
 }
 @media (max-width: 390px) {
   .to-top {
-    width: 5rem;
-    height: 5rem;
-  }
-}
-
-.to-top__text {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  font-weight: 400;
-  font-style: normal;
-  color: #fff;
-}
-@media (max-width: 768px) {
-  .to-top__text {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-    font-weight: 400;
-    font-style: normal;
-  }
-}
-@media (max-width: 390px) {
-  .to-top__text {
-    display: none;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }
 
@@ -2117,7 +2096,7 @@ button.swiper-pagination-bullet {
 }
 
 .quiz__title-main {
-  margin-bottom: 7rem;
+  margin: 5rem 0 7rem;
 }
 
 .quiz__question {

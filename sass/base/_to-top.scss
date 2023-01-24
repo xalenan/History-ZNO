@@ -2,8 +2,8 @@
     position: fixed;
     right: 1rem;
     bottom: 0;
-    width: 9.5rem;
-    height: 9.5rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
     background-color: $color-add;
     @include flex();
@@ -25,23 +25,11 @@
     }
 
     @include media-tablet {
-        width: 8rem;
-        height: 8rem;
+        width: 4rem;
+        height: 4rem;
     }
     @include media-mobile {
-        width: 5rem;
-        height: 5rem;
-    }
-}
-
-.to-top__text {
-    @include font ($size: 1.8rem, $height: 2.4rem);
-    color: $color-light;
-
-    @include media-tablet {
-        @include font ($size: 1.6rem, $height: 2.2rem);
-    }
-    @include media-mobile {
-        display: none;
+        width: 3.5rem;
+        height: 3.5rem;
     }
 }
