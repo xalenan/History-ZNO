@@ -158,7 +158,7 @@ const getData = (value) => {
 
             localStorage.setItem('dates', JSON.stringify(array));
 
-            if (window.location.pathname !== 'quiz-dates.html') {
+            if (window.location.pathname !== "/History-ZNO/quiz-dates.html") {
                 window.location.href = 'quiz-dates.html'
             } else {
                 renderAccents(array)
@@ -177,6 +177,6 @@ links.forEach((link) => {
     })
 })
 
-if (localStorage.getItem('dates') && window.location.pathname === 'quiz-dates.html') {
+if (localStorage.getItem('dates') && window.location.pathname === "/History-ZNO/quiz-dates.html") {
     renderDates(JSON.parse(localStorage.getItem('dates')))
 }
