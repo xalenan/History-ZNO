@@ -1,6 +1,7 @@
 .accordion {
     padding-bottom: 4rem;
 }
+
 .accordion__item {
     margin-bottom: 4rem;
     color: $color-light;
@@ -13,30 +14,20 @@
         box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgba(238, 117, 117, 0.5);
         @extend %transition;
     }
+
+    &-active {
+        background-color: #060714;
+        box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgba(238, 117, 117, 0.5);
+        @extend %transition;
+    }
 }
+
 .accordion__btn {
     color: $color-light;
     background-color: transparent;
     border: none;
     width: 100%; 
-    background-image: url(assets/icons/arrowup.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
-    outline: none;
-    background-size: 3rem;
-
-    &-active {
-        margin-bottom: 1.5rem;
-        background-image: url(assets/icons/arrowdown.svg);
-    }
-
-    @include media-tablet {
-        background-size: 2.5rem;
-    }
-    @include media-mobile {
-        background-size: 2rem;
-    }
+    @extend %transition;
 }
 
 .accordion-item__wrapper {
@@ -61,13 +52,19 @@
     }
 }
 
-.accordion__content {
-    list-style: none;
-    margin-bottom: 2rem;
+.accordion-item__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    filter: brightness(0) invert(1);    /* Белый цвет иконки*/
+    @extend %transition;
+}
 
-    &.hidden {
-        display: none;
-    }
+.accordion__content {
+    list-style: none;  
+    margin-top: 2rem;
+    max-height: 0;
+    overflow: hidden;
+    @extend %transition;
 }
 
 .accordion-content__item {
