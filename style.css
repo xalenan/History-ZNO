@@ -324,7 +324,7 @@ template {
   text-decoration: none;
 }
 
-.building-item__title:hover, .building-item__title, .chapter:hover, .chapter, .content__btn:hover, .content__btn, .quiz__btn:hover, .quiz__btn, .quiz__option:hover, .quiz__option, .item-person:hover, .item-person, .accordion__item:hover, .accordion__item, .dates__item:hover, .dates__item, .burger__line, .menu__link, .menu, .logo:hover, .logo, .to-top:hover, .to-top, .btn:hover, .btn, body {
+.building-item__title:hover, .building-item__title, .chapter:hover, .chapter, .content__btn:hover, .content__btn, .quiz__btn:hover, .quiz__btn, .quiz__option:hover, .quiz__option, .item-person:hover, .item-person, .accordion__content, .accordion-item__icon, .accordion__btn, .accordion__item-active, .accordion__item:hover, .accordion__item, .dates__item:hover, .dates__item, .burger__line, .menu__link, .menu, .logo:hover, .logo, .to-top:hover, .to-top, .btn:hover, .btn, body {
   transition: all 0.3s ease-out;
 }
 
@@ -1595,32 +1595,16 @@ button.swiper-pagination-bullet {
 .accordion__item:hover {
   box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgba(238, 117, 117, 0.5);
 }
+.accordion__item-active {
+  background-color: #060714;
+  box-shadow: 0.1rem 0.2rem 1.2rem 0.1rem rgba(238, 117, 117, 0.5);
+}
 
 .accordion__btn {
   color: #fff;
   background-color: transparent;
   border: none;
   width: 100%;
-  background-image: url(assets/icons/arrowup.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
-  outline: none;
-  background-size: 3rem;
-}
-.accordion__btn-active {
-  margin-bottom: 1.5rem;
-  background-image: url(assets/icons/arrowdown.svg);
-}
-@media (max-width: 768px) {
-  .accordion__btn {
-    background-size: 2.5rem;
-  }
-}
-@media (max-width: 390px) {
-  .accordion__btn {
-    background-size: 2rem;
-  }
 }
 
 .accordion-item__wrapper {
@@ -1657,12 +1641,17 @@ button.swiper-pagination-bullet {
   }
 }
 
+.accordion-item__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  filter: brightness(0) invert(1); /* Белый цвет иконки*/
+}
+
 .accordion__content {
   list-style: none;
-  margin-bottom: 2rem;
-}
-.accordion__content.hidden {
-  display: none;
+  margin-top: 2rem;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .accordion-content__item {
