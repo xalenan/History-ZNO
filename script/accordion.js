@@ -1,16 +1,27 @@
-const btns = document.querySelectorAll('.accordion__btn');
-const lists = document.querySelectorAll('.accordion__content');
+const btns = document.querySelectorAll('.accordion__btn');              
+const itemAcc = document.querySelectorAll('.accordion__item');         
+const lists = document.querySelectorAll('.accordion__content');         
+const arrowIcon = document.querySelectorAll('.accordion-item__icon');  
+
 
 btns.forEach((btnItem, index) => {
     btnItem.addEventListener('click', () => {
-        btns.forEach((btnItem) => {
-            btnItem.classList.remove('accordion__btn-active');
+        itemAcc.forEach((item) => {
+            item.classList.remove('accordion__item-active');         
         })
-        btnItem.classList.add('accordion__btn-active');
+        itemAcc[index].classList.add('accordion__item-active');     
 
-        lists.forEach((listItem) => {
-            listItem.classList.add('hidden');
+        arrowIcon.forEach((arrowIconItem) => {
+            arrowIconItem.src = 'assets/icons/arrow-close.svg';     
         })
-        lists[index].classList.remove('hidden');
+        arrowIcon[index].src = 'assets/icons/arrow-open.svg';       
+       
+        if (lists[index].style.maxHeight) {
+            lists.forEach((el) => el.style.maxHeight = null);
+            arrowIcon[index].src = 'assets/icons/arrow-close.svg';               
+        } else {
+            lists.forEach((el) => el.style.maxHeight = null);
+            lists[index].style.maxHeight = lists[index].scrollHeight + "px";
+        }         
     })
 })
