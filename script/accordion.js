@@ -18,7 +18,8 @@ btns.forEach((btnItem, index) => {
        
         if (lists[index].style.maxHeight) {
             lists.forEach((el) => el.style.maxHeight = null);
-            arrowIcon[index].src = 'assets/icons/arrow-close.svg';               
+            arrowIcon[index].src = 'assets/icons/arrow-close.svg';
+            itemAcc[index].classList.remove('accordion__item-active');
         } else {
             lists.forEach((el) => el.style.maxHeight = null);
             lists[index].style.maxHeight = lists[index].scrollHeight + "px";
